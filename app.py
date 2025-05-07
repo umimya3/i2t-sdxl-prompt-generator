@@ -1,4 +1,4 @@
-#GOOGLE_API_KEY = "ABCDEFGHIJK" # ここに実際のAPIキーを入力
+GOOGLE_API_KEY = "AIzaSyBJn5u5_v1Dgs3Ty2A00I3RrLDCSef8gqk" # ここに実際のAPIキーを入力
 import streamlit as st
 from PIL import Image
 import google.generativeai as genai
@@ -7,8 +7,6 @@ import os
 # st.copy_buttonが利用可能かどうかのフラグを設定 (hasattrで直接確認)
 CAN_USE_COPY_BUTTON = hasattr(st, "copy_button")
 
-#統計情報の無効か
-st.set_option('browser.gatherUsageStats', False)
 # --- Streamlit ページ設定 (一番最初に呼び出す) ---
 st.set_page_config(page_title="SDXLプロンプトジェネレーター", layout="wide")
 
@@ -25,7 +23,7 @@ if not GOOGLE_API_KEY:
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     except Exception:
         pass
-#LOCAL_DEV_API_KEY = "ABCDEFG" # ここに実際のAPIキーを入力（テスト時のみ）
+LOCAL_DEV_API_KEY = "AIzaSyBJn5u5_v1Dgs3Ty2A00I3RrLDCSef8gqk" # ここに実際のAPIキーを入力（テスト時のみ）
 if not GOOGLE_API_KEY and LOCAL_DEV_API_KEY != "YOUR_GOOGLE_API_KEY_HERE": # 実際のキーが入力されていれば使用
     if not SECRETS_FOUND:
         st.warning("ローカルテストのため、コードに記述されたAPIキーを使用します。Secretsファイルまたは環境変数の使用を推奨します。", icon="⚠️")
