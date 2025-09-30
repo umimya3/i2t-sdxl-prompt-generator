@@ -30,7 +30,7 @@ except Exception as e:
 # --- Gemini API ラッパー関数 (変更なし) ---
 def get_image_description(image_data, prompt_text):
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        model = genai.GenerativeModel('gemini-2.5-flash-latest')
         response = model.generate_content([prompt_text, image_data])
         return response.text
     except Exception as e:
@@ -241,3 +241,4 @@ with col2:
 st.markdown("---")
 
 st.markdown("© 2025 Matsui Naoki/sdxl_i2t_project  (Powered by Gemini & Streamlit)")
+
