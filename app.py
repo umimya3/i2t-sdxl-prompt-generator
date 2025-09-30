@@ -39,7 +39,7 @@ def get_image_description(image_data, prompt_text):
 
 def generate_sdxl_prompts(description_text, prompt_text_template):
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        model = genai.GenerativeModel('gemini-2.5-flash-latest')
         full_prompt = f"{prompt_text_template}\n\n説明文:\n{description_text}"
         response = model.generate_content(full_prompt)
         text_response = response.text
@@ -239,4 +239,5 @@ with col2:
 
 
 st.markdown("---")
+
 st.markdown("© 2025 Matsui Naoki/sdxl_i2t_project  (Powered by Gemini & Streamlit)")
